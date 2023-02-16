@@ -12,6 +12,7 @@ import path from 'path'
 import { FilterProductController } from "./controllers/product/FilterProductController";
 import { CreateOrderController } from "./controllers/order/CreateOrderController";
 import { DeleteOrderController } from "./controllers/order/DeleteOrderController";
+import { CreateOrderItemController } from "./controllers/order/CreateOrderItemController";
 
 const router = Router()
 const upload = multer(uploadConfig.upload('./tmp'))
@@ -31,6 +32,7 @@ router.post('/product', isAuthenticated, upload.single('file'), new CreateProduc
 router.get('/product', isAuthenticated, new FilterProductController().handle)
 
 router.post('/order', isAuthenticated, new CreateOrderController().handle)
+router.post('/order/item', isAuthenticated, new CreateOrderItemController().handle)
 router.delete('/order', isAuthenticated, new DeleteOrderController().handle)
 
 export default router
