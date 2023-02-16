@@ -1,5 +1,6 @@
 import { Router, Response, Request } from "express";
 import { CreateCategoryController } from "./controllers/category/CreateCategoryController";
+import { GetCategoryController } from "./controllers/category/GetCategoryController";
 import { AuthUserController } from "./controllers/user/AuthUserController";
 import { CreateUserController } from "./controllers/user/CreateUserController";
 import { DetailUserController } from "./controllers/user/DetailUserController";
@@ -14,5 +15,6 @@ router.get('/userDetail', isAuthenticated, new DetailUserController().handle)
 
 
 router.post('/category', isAuthenticated, new CreateCategoryController().handle)
+router.get('/category', isAuthenticated, new GetCategoryController().handle)
 
 export default router

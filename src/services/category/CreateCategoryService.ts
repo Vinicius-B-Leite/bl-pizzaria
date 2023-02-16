@@ -1,4 +1,4 @@
-import prismaclient from "../../../prisma";
+import prismaclient from "../../prisma";
 
 class CreateCategoryService {
     async execute(name: string) {

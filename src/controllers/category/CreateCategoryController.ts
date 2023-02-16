@@ -1,4 +1,4 @@
-import { CreateCategoryService } from "../../services/user/category/CreateCategoryService";
+import { CreateCategoryService } from "../../services/category/CreateCategoryService";
 import { Response, Request } from "express";
 
 
