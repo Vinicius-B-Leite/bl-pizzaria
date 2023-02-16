@@ -7,7 +7,7 @@ class CreateProductController {
 
         if (!req.file) throw new Error('Erro ao receber imagem')
         else {
-            let banner = req.file.fieldname
+            let banner = req.file.filename
             const product = await new CreateProductService().execute({ name, price, description, banner, category_id })
 
             return res.json(product)
